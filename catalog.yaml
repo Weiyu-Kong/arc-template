@@ -8,7 +8,10 @@ templates:
     stack:
       - Vite
       - React
+      - React Router
       - TypeScript
       - TailwindCSS
       - FastAPI
       - pytest
+      - Vitest
+      - Playwright

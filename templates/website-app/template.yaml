@@ -8,6 +8,7 @@ stack:
   frontend:
     framework: Vite
     library: React
+    router: React Router
     language: TypeScript
     styling: TailwindCSS
   backend:
@@ -15,6 +16,8 @@ stack:
     language: Python
   tests:
     backend: pytest
+    frontend: Vitest
+    e2e: Playwright
 copy:
   source: files
   exclude:
@@ -32,3 +35,5 @@ agent_guidance:
   function_root: backend/app
   db_root: backend/app/repository.py
   backend_test_root: backend/tests
+  frontend_test_root: frontend/src
+  e2e_test_root: frontend/e2e
