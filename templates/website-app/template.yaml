@@ -9,6 +9,7 @@ stack:
     framework: Vite
     library: React
     language: TypeScript
+    styling: TailwindCSS
   backend:
     framework: FastAPI
     language: Python
@@ -31,4 +32,3 @@ agent_guidance:
   function_root: backend/app
   db_root: backend/app/repository.py
   backend_test_root: backend/tests
-

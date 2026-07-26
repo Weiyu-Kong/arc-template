@@ -4,7 +4,7 @@ This project is initialized from the `website-app` generation template.
 
 ## Stack
 
-- Frontend: Vite + React + TypeScript
+- Frontend: Vite + React + TypeScript + TailwindCSS
 - Backend: FastAPI
 - Tests: pytest
 
@@ -25,4 +25,3 @@ Generation agents should keep implementation inside the template structure:
 - Function/service logic: `backend/app`
 - Local persistence: `backend/app/repository.py`
 - Backend tests: `backend/tests`
-

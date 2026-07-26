@@ -9,6 +9,6 @@ templates:
       - Vite
       - React
       - TypeScript
+      - TailwindCSS
       - FastAPI
       - pytest
-
