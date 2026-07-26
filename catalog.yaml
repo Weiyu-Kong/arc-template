@@ -1,0 +1,14 @@
+schema_version: "1.0"
+templates:
+  - id: website-app
+    name: Website Application
+    type: website_app
+    version: 1.0.0
+    path: templates/website-app
+    stack:
+      - Vite
+      - React
+      - TypeScript
+      - FastAPI
+      - pytest
+
