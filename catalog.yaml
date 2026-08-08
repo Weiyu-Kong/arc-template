@@ -15,3 +15,13 @@ templates:
       - pytest
       - Vitest
       - Playwright
+  - id: mobile-app
+    name: Mobile Application
+    type: mobile_app
+    version: 1.0.0
+    path: templates/mobile-app
+    stack:
+      - Android
+      - Java
+      - Gradle
+      - JUnit

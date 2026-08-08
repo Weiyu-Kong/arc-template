@@ -12,6 +12,7 @@ requirements.
 | ID | Type | Stack |
 |---|---|---|
 | `website-app` | Website application | Vite + React + TypeScript frontend, FastAPI backend |
+| `mobile-app` | Mobile application | Android + Java + Gradle |
 
 ## Copy Usage
 
@@ -19,9 +20,16 @@ requirements.
 Copy-Item -Recurse -Force .\templates\website-app\files\* D:\target\generated_app\
 ```
 
+For mobile tasks:
+
+```powershell
+Copy-Item -Recurse -Force .\templates\mobile-app\files\* D:\target\generated_app\
+```
+
 After copying, generation agents should implement inside:
 
 - `frontend/src` for UI.
 - `backend/app` for API, function/service logic, and local persistence.
 - `backend/tests` for backend tests.
+- `app/src/main` and `app/src/test` for mobile tasks.
 
