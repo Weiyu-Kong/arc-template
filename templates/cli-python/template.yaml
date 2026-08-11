@@ -1,6 +1,6 @@
 schema_version: "1.0"
-id: cli
-name: Command-Line Application
+id: cli-python
+name: Command-Line Application (Python)
 type: cli_app
 version: 1.0.0
 description: Python command-line application template for generation agents.
@@ -13,8 +13,8 @@ stack:
   tests:
     framework: unittest
 copy:
-  source: files
   exclude:
+    - template.yaml
     - __pycache__
     - "*.py[cod]"
     - .pytest_cache

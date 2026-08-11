@@ -1,10 +1,10 @@
 schema_version: "1.0"
 templates:
-  - id: website-app
-    name: Website Application
-    type: website_app
+  - id: web-react-fastapi
+    name: Web Application (React + FastAPI)
+    type: web_app
     version: 1.0.0
-    path: templates/website-app
+    path: templates/web-react-fastapi
     stack:
       - Vite
       - React
@@ -15,21 +15,34 @@ templates:
       - pytest
       - Vitest
       - Playwright
-  - id: mobile-app
-    name: Mobile Application
+  - id: web-react-express
+    name: Web Application (React + Express)
+    type: web_app
+    version: 1.0.0
+    path: templates/web-react-express
+    stack:
+      - Vite
+      - React
+      - JavaScript
+      - Express
+      - SQLite
+      - Vitest
+      - Playwright
+  - id: mobile-android-java
+    name: Mobile Application (Android + Java)
     type: mobile_app
     version: 1.0.0
-    path: templates/mobile-app
+    path: templates/mobile-android-java
     stack:
       - Android
       - Java
       - Gradle
       - JUnit
-  - id: cli
-    name: Command-Line Application
+  - id: cli-python
+    name: Command-Line Application (Python)
     type: cli_app
     version: 1.0.0
-    path: templates/cli
+    path: templates/cli-python
     stack:
       - Python
       - argparse

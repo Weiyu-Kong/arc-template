@@ -1,6 +1,6 @@
 # Generated Website Application
 
-This project is initialized from the `website-app` generation template.
+This project is initialized from the `web-react-fastapi` generation template.
 
 ## Stack
 
