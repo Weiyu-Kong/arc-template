@@ -25,3 +25,12 @@ templates:
       - Java
       - Gradle
       - JUnit
+  - id: cli
+    name: Command-Line Application
+    type: cli_app
+    version: 1.0.0
+    path: templates/cli
+    stack:
+      - Python
+      - argparse
+      - unittest
