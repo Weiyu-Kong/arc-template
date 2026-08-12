@@ -1,5 +1,5 @@
 const app = require('./app');
-const defaultPort = __ARC_WEB_PORT__;
+const defaultPort = 3000;
 const port = Number(process.env.PORT || defaultPort);
 
 app.listen(port, () => {
