@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-const backendPort = Number(process.env.ARC_WEB_PORT || '__ARC_WEB_PORT__')
+const backendPort = Number(process.env.ARC_WEB_PORT || 3000)
 
 // https://vite.dev/config/
 export default defineConfig({
