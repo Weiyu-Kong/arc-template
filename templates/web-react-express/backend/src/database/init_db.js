@@ -76,6 +76,7 @@ async function initializeDatabase(options = {}) {
      * 3. Keep schema evolution idempotent and centralized in this file.
      * 4. Reuse `db_runtime.js` for CRUD helpers and `test_harness.js` for test DB lifecycle instead of re-implementing one-off connection logic elsewhere.
      */
+    return database;
   })();
 
   try {
