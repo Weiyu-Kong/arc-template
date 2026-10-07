@@ -99,5 +99,7 @@ npm run test:all
 - Runtime database helpers live under `backend/src/database`.
 - The default database file is `database.db`, unless `ARC_DB_FILE` or `DATABASE_FILE` is set.
 - Test helpers create isolated SQLite files under `.arc-test-db`.
-- `npm run db:seed` runs the template seed entrypoint.
-- `npm run db:prepare:e2e` prepares an isolated E2E database.
+- ARC generates per-table `schema/*.sql` and one `seed.sql`, validates them, and injects a fixed runtime bootstrap. Do not implement schema or fixtures in the connection helpers.
+- Every initialization applies the same validated schema and seeds. `npm run db:seed` is a compatibility command with no separate fixture logic.
+- Unit/Integration tests use `createTestDatabaseHarness()` for isolation and scenario-specific setup.
+- `npm run db:prepare:e2e` resets the database selected by `ARC_DB_FILE` and runs the normal bootstrap. ARC sets an isolated path before calling it; browser tests need no SQL setup or test harness imports.
