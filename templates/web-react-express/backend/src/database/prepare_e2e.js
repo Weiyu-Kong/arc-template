@@ -1,19 +1,13 @@
-const { closeDb } = require('./init_db');
-const { createRuntimeDatabaseHarness } = require('./test_harness');
+const { initializeDatabase, closeDb, getDbPath } = require('./init_db');
 
 async function prepareE2EDatabase(options = {}) {
-  const harness = createRuntimeDatabaseHarness({
-    label: options.label || process.env.ARC_E2E_DB_LABEL || 'playwright-e2e',
-    seedDefault: options.seedDefault !== false,
-  });
-
-  const runtime = await harness.setup();
-  await closeDb();
-
-  return {
-    dbPath: runtime.dbPath,
-    seeded: options.seedDefault !== false,
-  };
+  // ARC supplies an isolated ARC_DB_FILE. Use the same bootstrap as production.
+  try {
+    await initializeDatabase({ dbPath: options.dbPath, reset: true });
+    return { dbPath: getDbPath(), seeded: true };
+  } finally {
+    await closeDb();
+  }
 }
 
 if (require.main === module) {

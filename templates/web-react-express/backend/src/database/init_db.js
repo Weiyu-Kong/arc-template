@@ -69,13 +69,7 @@ async function initializeDatabase(options = {}) {
   initPromise = (async () => {
     await runStatement(database, 'PRAGMA foreign_keys = ON;');
 
-    /**
-     * Guide model instructions:
-     * 1. Use CREATE TABLE IF NOT EXISTS to create new tables.
-     * 2. When adding fields, use ALTER TABLE ... ADD COLUMN ... and guard it with existence checks or tolerant error handling.
-     * 3. Keep schema evolution idempotent and centralized in this file.
-     * 4. Reuse `db_runtime.js` for CRUD helpers and `test_harness.js` for test DB lifecycle instead of re-implementing one-off connection logic elsewhere.
-     */
+    // Fixed connection lifecycle. ARC injects the validated schema/seed bootstrap here.
     return database;
   })();
 

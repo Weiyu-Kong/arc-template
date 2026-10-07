@@ -10,7 +10,6 @@ const {
   resetDatabaseFile,
 } = require('./init_db');
 const runtime = require('./db_runtime');
-const seedDatabase = require('./seed_db');
 
 const DEFAULT_TEST_DB_ROOT = '.arc-test-db';
 
@@ -27,7 +26,8 @@ function createRuntimeFacade(dbPath) {
     all: runtime.all,
     exec: runtime.exec,
     withTransaction: runtime.withTransaction,
-    seedDefault: () => seedDatabase(),
+    // Compatibility: default seeds are already applied during setup/reset.
+    seedDefault: () => initializeDatabase(),
   };
 }
 
@@ -97,9 +97,6 @@ function createTestDatabaseHarness(options = {}) {
 
     active = true;
 
-    if (options.seedDefault === true) {
-      await seedDatabase();
-    }
     await runSeedHook(options.seed);
 
     return createRuntimeFacade(dbPath);
@@ -115,9 +112,6 @@ function createTestDatabaseHarness(options = {}) {
     await resetDatabaseFile();
     await initializeDatabase();
 
-    if (options.seedDefault === true) {
-      await seedDatabase();
-    }
     await runSeedHook(seedHook);
   }
 
